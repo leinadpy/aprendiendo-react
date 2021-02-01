@@ -1,16 +1,20 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import Usuario from "./componentes/Usuario";
-import FormularioInicioSesion from "./componentes/FormularioInicioSesion"
+import FormularioInicioSesion from "./componentes/FormularioInicioSesion";
+// import ContadorClass from "./componentes/ContadorClass";
+import ContadorFunc from "./componentes/ContadorFunc";
 
 const App = () => {
-  const [session, cambiarEstadoSesion] = useState(false);
+  const [session, cambiarEstadoSesion] = useState(true);
 
   return (
     <>
       {session === true ? (
         <div>
           <Usuario />
+          {/* <ContadorClass cantidadAIncrementar={10} cantidadADisminuir={2} /> */}
+          <ContadorFunc cantidadAIncrementar={10} cantidadADisminuir={2} />
           <button onClick={() => cambiarEstadoSesion(false)}>
             Cerrar Sesion
           </button>
